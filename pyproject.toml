@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "rcv_mnm"
+version = "0.1.0"
+description = ""
+authors = ["Robert Beatty <r0bb2323@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.7,<3.10"
+tensorflow = "^2.7.0"
+mtcnn = "^0.1.1"
+Pillow = "^9.0.0"
+matplotlib = "^3.5.1"
+streamlit = "^1.3.1"
+watchdog = "^2.1.6"
+bs4 = "^0.0.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry>=1.1.12"]
+build-backend = "poetry.masonry.api"
