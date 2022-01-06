@@ -10,7 +10,8 @@ import tensorflow as tf
 def load_model(
     model_path: str = "models/latest_finetuned_mnm_model.h5",
 ):
-    model = tf.keras.models.load_model(model_path)
+    export_path = os.path.join(os.getcwd(), model_path)
+    model = tf.keras.models.load_model(export_path)
     return model
 
 @st.cache()
