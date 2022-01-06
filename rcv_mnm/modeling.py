@@ -8,7 +8,7 @@ import tensorflow as tf
 
 @st.cache(allow_output_mutation=True)
 def load_model(
-    model_path: str = "models/latest_finetuned_mnm_model.h5",
+    model_path: str = "models/latest_finetuned_mnm_model.tflite",
 ):
     model = tf.keras.models.load_model(model_path)
     return model
