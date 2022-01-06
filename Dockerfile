@@ -14,6 +14,6 @@ RUN export PATH=/code/rcv_mnm/main.py:$PATH
 
 # Start streamlit and run app
 WORKDIR /code/rcv_mnm
-EXPOSE 8501
-ENTRYPOINT ["streamlit", "run", "--server.maxUploadSize=5"]
+EXPOSE 8080
+ENTRYPOINT ["streamlit", "run", "--server.port=8080", "--server.enableCORS=false", "--server.maxUploadSize=5"]
 CMD ["main.py"]
