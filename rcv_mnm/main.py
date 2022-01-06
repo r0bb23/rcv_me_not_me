@@ -24,8 +24,8 @@ def make_prediction(
         st.subheader(f"(Confidence: {prediction.confidence})")
         if prediction.label == "Robert_Beatty":
             image_base64 = helpers.img_to_bytes("resources/robert_resume.jpeg")
-            link="https://docs.google.com/document/d/1iGtDjwRcILFmo6pw9rNcCMFhKNNyJiSoNm5s1VxrJUs/edit?usp=sharing"
-            html = f"<a href='{link}'><img src='data:image/png;base64,{image_base64}' target='_blank'></a>"
+            url          = "https://docs.google.com/document/d/1iGtDjwRcILFmo6pw9rNcCMFhKNNyJiSoNm5s1VxrJUs/edit?usp=sharing"
+            html         = f"<a href='{url}'><img src='data:image/png;base64,{image_base64}' target='_blank'></a>"
             st.markdown(html, unsafe_allow_html=True)
         elif prediction.label == "Linus_Sebastian":
             output_image = Image.open("resources/linus_dont_do_it.jpeg")
@@ -55,11 +55,11 @@ if __name__ == "__main__":
             labels.values(),
         )
         if person_name == "Robert_Beatty":
-            file_name = f"resources/robert{random.randint(1, 2)}.jpg"
+            file_name   = f"resources/robert{random.randint(1, 2)}.jpg"
             cleaned_img = preprocess.extract_image_to_nparray(file_name)
         else:
             try:
-                url = helpers.get_random_image_url(person_name)
+                url         = helpers.get_random_image_url(person_name)
                 cleaned_img = preprocess.extract_image_to_nparray(url, "url")
             except:
                 st.header("Failed to get content from random image URL. Please try again.")
