@@ -47,12 +47,6 @@ if __name__ == "__main__":
     st.write(instructions)
 
     file = st.file_uploader("Upload An Image")
-    dtype_file_structure_mapping = {
-        "All Images": "consolidated", "Images Used To Train The Model": "train",
-        "Images Used To Tune The Model": "valid", "Images The Model Has Never Seen": "test"
-    }
-    data_split_names = list(dtype_file_structure_mapping.keys())
-
     if file:
         cleaned_img = preprocess.extract_image_to_nparray(file)
     else:
