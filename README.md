@@ -19,7 +19,7 @@ docker build -t rbb-mnm .
 #### Run Container Interactively
 
 ```bash
-docker container run -p 8501:8501 -it rbb-mnm:latest
+docker container run -p 8080:8080 -it rbb-mnm:latest
 ```
 
 **Note:** I do this interactively so you can monitor and kill it easier.
