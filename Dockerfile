@@ -1,16 +1,19 @@
 FROM python:3.8
 
-COPY ./rbb-mnm/ /code/
+# Move data over
+COPY ./rcv_mnm/ /code/rcv_mnm/
+COPY ./pyproject.toml /code/
+COPY ./poetry.lock /code/
 
-COPY ./models/ /code/
+# Install apps and packages
+RUN apt-get update && apt-get -y install libgomp1 clang ffmpeg libsm6 libxext6
+RUN pip --no-cache-dir install --upgrade pip
+RUN pip --no-cache-dir install -U micropipenv[toml] libclang
+RUN cd /code/ && micropipenv install -- --no-cache-dir
+RUN export PATH=/code/rcv_mnm/main.py:$PATH
 
-#Install necessary packages from requirements.txt with no cache dir allowing for installation on machine with very little memory on board
-RUN pip install --upgrade pip
-RUN pip --no-cache-dir install -r requirements.txt
-
-#Exposing the default streamlit port
+# Start streamlit and run app
+WORKDIR /code/rcv_mnm
 EXPOSE 8501
-
-#Running the streamlit app
 ENTRYPOINT ["streamlit", "run", "--server.maxUploadSize=5"]
-CMD ["rcv_mnm/main.py"]
+CMD ["main.py"]

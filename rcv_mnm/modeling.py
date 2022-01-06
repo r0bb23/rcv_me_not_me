@@ -2,7 +2,7 @@ import collections
 import numpy as np
 import os
 import pandas as pd
-from rcv_mnm import preprocess
+import preprocess
 import streamlit as st
 import tensorflow as tf
 
@@ -34,5 +34,8 @@ def predict(
     prediction_probs = model.predict(image)
     Prediction = collections.namedtuple("Prediction", ["label", "confidence"])
 
-    prediction = Prediction(labels_lookup[np.argmax(prediction_probs[0])], np.max(prediction_probs[0]))
+    prediction = Prediction(
+        labels_lookup[np.argmax(prediction_probs[0])],
+        np.max(prediction_probs[0]),
+    )
     return prediction

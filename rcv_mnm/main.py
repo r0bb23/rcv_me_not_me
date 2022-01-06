@@ -1,7 +1,9 @@
+#!/usr/bin/env python
+
 from PIL import Image
-from rcv_mnm import helpers
-from rcv_mnm import modeling
-from rcv_mnm import preprocess
+import helpers
+import modeling
+import preprocess
 import pandas as pd
 import random
 import streamlit as st
