@@ -1,14 +1,9 @@
 from PIL import Image
 from rcv_mnm import helpers
 from rcv_mnm import modeling
-<<<<<<< HEAD
-import pandas as pd
-from rcv_mnm import preprocess
-=======
 from rcv_mnm import preprocess
 import pandas as pd
 import random
->>>>>>> 5823de7 (testing)
 import streamlit as st
 
 def make_prediction(
@@ -63,7 +58,15 @@ if __name__ == "__main__":
             "Person",
             labels.values(),
         )
-        url = helpers.get_random_image_url(person_name)
-        cleaned_img = preprocess.extract_image_to_nparray(url, "url")
+        if person_name == "Robert_Beatty":
+            file_name = f"resources/robert{random.randint(1, 2)}.jpg"
+            cleaned_img = preprocess.extract_image_to_nparray(file_name)
+        else:
+            try:
+                url = helpers.get_random_image_url(person_name)
+                cleaned_img = preprocess.extract_image_to_nparray(url, "url")
+            except:
+                st.header("Failed to get content from random image URL. Please try again.")
+                cleaned_img = [None]
 
     make_prediction(cleaned_img)
