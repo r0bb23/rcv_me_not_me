@@ -1,8 +1,14 @@
 from PIL import Image
 from rcv_mnm import helpers
 from rcv_mnm import modeling
+<<<<<<< HEAD
 import pandas as pd
 from rcv_mnm import preprocess
+=======
+from rcv_mnm import preprocess
+import pandas as pd
+import random
+>>>>>>> 5823de7 (testing)
 import streamlit as st
 
 def make_prediction(
