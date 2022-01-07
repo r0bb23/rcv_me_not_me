@@ -14,7 +14,6 @@ def load_model(
     model = tf.keras.models.load_model(export_path)
     return model
 
-@st.cache()
 def predict(
     image,
     labels_lookup: dict,
