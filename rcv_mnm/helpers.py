@@ -25,7 +25,7 @@ def get_random_image_url(
     label: str,
 ):
     query = label.split("_")
-    query = '+'.join(query) + "+face"
+    query = '+'.join(query) + "+face+2021"
     url   = "https://www.bing.com/images/search?q=" + query + "&qft=+filterui:imagesize-large&FORM=R5IR3"
 
     header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}

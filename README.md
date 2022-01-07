@@ -2,7 +2,9 @@
 
 ## What I did
 
-I created a streamlit app that uses a facial recognition model using transfer learning. More on that in the model_creation section within the ipython notbook. The app lets you upload or randomly upload an image from a web search to try and match the face in the picture with one of the faces trained in the model. If it matches my face it will return a link to my resume.
+I created a streamlit app that uses a facial recognition model using transfer learning. You can find more on how I create the model in the model_creation section within the ipython notbook. The app lets you upload or select a person and randomly download an image from a web search to try and match the face in the picture with one of the faces trained in the model. If it matches my face it will return a link to my resume.
+
+[https://rbbmnm.optimalbraindamage.com/](https://rbbmnm.optimalbraindamage.com/)
 
 ## Code Usage
 
@@ -22,7 +24,7 @@ docker build -t rbb-mnm .
 docker container run -p 8080:8080 -it rbb-mnm:latest
 ```
 
-**Note:** I do this interactively so you can monitor and kill it easier.
+**Note:** I do this interactively (-it) so you can monitor and kill it easier.
 
 ### Poetry
 

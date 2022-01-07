@@ -16,7 +16,7 @@ def make_prediction(
         st.image(Image.open("resources/no_face.jpeg"))
     else:
         st.header("Here is the image you've selected.")
-        st.subheader("(passed through a MTCNN face recognition model)")
+        st.subheader("(Passed through a MTCNN face recognition model)")
         st.image(cleaned_img)
 
         prediction = modeling.predict(cleaned_img, labels, model)

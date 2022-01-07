@@ -67,4 +67,4 @@ def extract_image_to_nparray(
             )
         ),
         axis = 0,
-    )
+    ) / 255.0
