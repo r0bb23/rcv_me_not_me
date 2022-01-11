@@ -4,7 +4,7 @@
 
 I created a streamlit app that uses a facial recognition model using transfer learning. You can find more on how I create the model in the model_creation section within the ipython notbook. The app lets you upload or select a person and randomly download an image from a web search to try and match the face in the picture with one of the faces trained in the model. If it matches my face it will return a link to my resume.
 
-[https://rbbmnm.optimalbraindamage.com/](https://rbbmnm.optimalbraindamage.com/)
+[https://resume.optimalbraindamage.com/](https://resume.optimalbraindamage.com/)
 
 ## Code Usage
 
