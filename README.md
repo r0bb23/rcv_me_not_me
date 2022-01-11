@@ -1,4 +1,4 @@
-# rcv_me_not_me
+# Robert's Resume Facial Recognition Application
 
 ## What I did
 
